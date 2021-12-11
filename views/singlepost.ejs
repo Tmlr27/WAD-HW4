@@ -1,0 +1,30 @@
+
+<div class="post" >
+  <div class="post-header">
+    <img src="https://cdn-icons-png.flaticon.com/512/64/64572.png" />
+    <small class="created_date"
+      ><%= new Date(post.date).toLocaleDateString("en-GB",{ weekday:
+      'long', year: 'numeric', month: 'long', day: 'numeric' }) %></small
+    >
+  </div>
+  <img src="<%= post.post_picture %>" class="image" data-id="<%= post.id %>"/>
+  <p><%= post.post_text %></p>
+  <div class="divlike">
+    <input
+      class="like_button"
+      type="image"
+      src="https://cdn-icons-png.flaticon.com/512/833/833472.png"
+      alt="like_button"
+      data-like="<%= post.id %>"
+    />
+    <span class="span_like" data-like="<%= post.id %>"><%= post.likes %></span>
+    <input
+      class="delete"
+      data-del="<%= post.id %>"
+      type="button"
+      value="Delete"
+      onclick="reload()"
+    />
+  </div>
+</div>
+
